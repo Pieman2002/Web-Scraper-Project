@@ -1,3 +1,5 @@
+# This is for LEARNING only! Do NOT copy any of this!
+
 from bs4 import BeautifulSoup
 import requests
 from twilio.rest import Client
