@@ -38,7 +38,7 @@ while (timesChecked > 0):
     r = requests.get(url)
     data = r.text
     newSoup = BeautifulSoup(data, 'html.parser')
-
+#-------------------------------------------------------------------------------------------------------
     # Copy newSoup to new file
     f = open("newSoup.txt","w+")
     f.write(str(soup))
