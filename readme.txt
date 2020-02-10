@@ -7,5 +7,3 @@ Grab data from web page
 Test for change
 Notify user if a change is found
 Repeat
-
-This was uplodaded to Hudson branch.
