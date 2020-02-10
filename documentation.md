@@ -2,9 +2,9 @@
 
 This file is for both using the scraper and building the scraper. I am not an expert with these sorts of things.
 ## Table of Contents
-- [Title]
-- [Table of Contents]
-- Twilio
+- [Title](https://github.com/Pieman2002/Web-Scraper-Project/blob/Liam/documentation.md#documentation)
+- [Table of Contents](https://github.com/Pieman2002/Web-Scraper-Project/blob/Liam/documentation.md#table-of-contents)
+- [Twilio](https://github.com/Pieman2002/Web-Scraper-Project/blob/Liam/documentation.md#twilio)
 
 ## Twilio
 Twilio is a great resource for getting actual feedback from your code. Here are some things that might help Twilio beginners:
