@@ -1,6 +1,6 @@
 # Documentation
 
-This file consists of things I have found useful.
+This file is for both using the scraper and building the scraper. I am not an expert with these sorts of things.
 
 ## Twilio
 Twilio is a great resource for getting actual feedback from your code. Here are some things that might help Twilio beginners:
