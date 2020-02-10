@@ -6,6 +6,9 @@ This file is for both using the scraper and building the scraper. I am not an ex
 - [Table of Contents](https://github.com/Pieman2002/Web-Scraper-Project/blob/Liam/documentation.md#table-of-contents)
 - [Twilio](https://github.com/Pieman2002/Web-Scraper-Project/blob/Liam/documentation.md#twilio)
 
+## Strings in Python
+
+
 ## Twilio
 Twilio is a great resource for getting actual feedback from your code. Here are some things that might help Twilio beginners:
 
