@@ -9,7 +9,7 @@ url = "https://katu.com/resources/ftptransfer/katu/traffic/traffic.html"
 page  = requests.get(url)
 
 soup = BeautifulSoup(page.text, "html.parser")
-results = soup.find_all("div", attrs={"class":"cwcReport Oregon"})
+results = soup.find_all("div", attrs={"class":"cwcReport Oregon"}).get_text
 ResultStr = str(results)
 
 
