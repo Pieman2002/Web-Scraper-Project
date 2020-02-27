@@ -53,17 +53,8 @@ master.grid_rowconfigure(5,weight=7)
 master.grid_rowconfigure(6,weight=1)
 
 # Quit and continue buttons
-tk.Button(master, 
-          text='Quit', 
-          command=master.quit).grid(row=7, 
-                                    column=0, 
-                                    sticky=tk.NSEW, 
-                                    pady=4)
-tk.Button(master, 
-          text='Scrape', command=input_entry_fields).grid(row=7, 
-                                                       column=1, 
-                                                       sticky=tk.NSEW, 
-                                                       pady=4)
+tk.Button(master, text='Quit', command=master.quit).grid(row=7, column=0, sticky=tk.NSEW, pady=4)
+tk.Button(master, text='Scrape', command=input_entry_fields).grid(row=7, column=1, sticky=tk.NSEW, pady=4)
 
 
 # Running the main window
