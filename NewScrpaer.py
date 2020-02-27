@@ -1,37 +1,59 @@
 import requests 
 import re
-from twilio.rest import Client
+import time
 from bs4 import BeautifulSoup
 
-#Twilio Inputs
-sender = input("Please enter your trial number here.")
-yournumber = input("Please enter your phone number here.")
-account_sid = input("Please enter your Account SID here.")
-auth_token = input("Please enter your Authorization Token here.")
+try:
+  f = open("temperature.txt", "w")
+  f.write("0")
+  f.close()
+except IOError:
+  f = open("temperature.txt", "w")
+finally:
+  f.close()
 
-#Scraper Bit
-page = requests.get("https://weather.com/weather/today/l/97202:4:US")
-soup = BeautifulSoup(page.content, 'html.parser')
-results = soup.find(class_='today_nowcard-temp')
-RawTemp = str(results.find('span'))
 
-if len(RawTemp) == 35:
-  temp = RawTemp[15:16]
 
-if len(RawTemp) == 36:
-  temp = RawTemp[15:17]
-
-if len(RawTemp) == 37:
-  temp = RawTemp[15:18]
+def main():
+  page = requests.get("https://weather.com/weather/today/l/97202:4:US")
+  soup = BeautifulSoup(page.content, 'html.parser')
+  results = soup.find(class_='today_nowcard-temp')
+  RawTemp = str(results.find('span'))
+  PrevTempFile = open("temperature.txt", "r")
+  PrevTemp = PrevTempFile.read()
+  print(PrevTemp)
   
-#Twilio Communication
-client = Client(account_sid, auth_token)
+  PrevTempFile.close()
+  
+  if len(RawTemp) == 35:
+    temp = RawTemp[15:16]
 
-message = client.messages \
-    .create(
-         body='The temperature is now ' + temp,
-         from_=sender,
-         to=yournumber
-     )
+  if len(RawTemp) == 36:
+    temp = RawTemp[15:17]
 
-print(message.sid)
+  if len(RawTemp) == 37:
+    temp = RawTemp[15:18]
+  
+  print(temp)
+  
+  if (int(PrevTemp) == int(temp)) or (int(PrevTemp) == 0):
+    print("Temperature is unchanged")
+  else:
+    print("The temperature is now "+temp+" degrees")
+  
+  
+  
+  f = open("temperature.txt", "w")
+  f.write(temp)
+  f.close()
+  
+  f = open("temperature.txt", "w")
+  f.write(temp)
+  f.close()
+  print(temp)
+  
+  time.sleep(60)
+  main()
+  
+if __name__ == "__main__":
+  main()
