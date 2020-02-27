@@ -2,6 +2,7 @@ import requests
 import re
 import time
 from bs4 import BeautifulSoup
+from twilio.rest import Client
 
 try:
   f = open("temperature.txt", "w")
@@ -15,6 +16,11 @@ finally:
 
 
 def main():
+  
+  sender = ("Please enter your trial number here.")
+  account_sid = ("Please enter your Account SID here.")
+  auth_token = ("Please enter your Authorization Token here.")
+  
   page = requests.get("https://weather.com/weather/today/l/97202:4:US")
   soup = BeautifulSoup(page.content, 'html.parser')
   results = soup.find(class_='today_nowcard-temp')
@@ -40,6 +46,14 @@ def main():
     print("Temperature is unchanged")
   else:
     print("The temperature is now "+temp+" degrees")
+    message = client.messages \
+        .create(
+             body='The temperature is now '+temp+' degrees',
+             from_=sender,
+             to=yournumber
+        )
+
+    print(message.sid)
   
   
   
