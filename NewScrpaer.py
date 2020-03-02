@@ -17,9 +17,9 @@ finally:
 
 def main():
   
-  sender = ("Please enter your trial number here.")
-  account_sid = ("Please enter your Account SID here.")
-  auth_token = ("Please enter your Authorization Token here.")
+  sender = #Please enter your trial number here.
+  account_sid = #Please enter your Account SID here.
+  auth_token = #Please enter your Authorization Token here.
   
   page = requests.get("https://weather.com/weather/today/l/97202:4:US")
   soup = BeautifulSoup(page.content, 'html.parser')
